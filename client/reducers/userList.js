@@ -1,6 +1,6 @@
-// a reducer takes in two things:
-// 1. the action (info about what happened)
-// 2. copy of current state
+// Reducer for userList
+// Note: The name of the function must be the SAME as the prop we expect when accessing it later in the component
+import {get} from 'lodash/fp';
 
 function userList(state = [], action) {
     switch(action.type) {
@@ -9,8 +9,7 @@ function userList(state = [], action) {
             []
           ]
         case 'FETCH_USER_LIST':
-          const userList = action.payload.data;
-
+          const userList = get(action, 'payload.data');
           return [
             {name: Math.random()},
             ...userList

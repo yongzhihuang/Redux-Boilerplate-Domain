@@ -5,10 +5,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as UserListActions from './UserListActions';
 
+// Component
 const UserList = React.createClass({
-
     componentWillMount() {
-      // const {username} = this.props.params;
       this.props.fetchUserList();
     },
 
@@ -30,7 +29,7 @@ const UserList = React.createClass({
     }
 });
 
-
+// Mappers
 function mapStateToProps(state) {
   console.log('state', state)
     return {
@@ -45,31 +44,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserList);
-
-// in Product.js
-// import { bindActionCreators } from 'redux';
-// import { connect } from 'react-redux';
-// import * as UserListActions from './UserListActions';
-
-// // component part
-// export function UserList({ name, description }) {
-//     return <div>
-//         <h1>{ name }</h1>
-//         <div className="description">
-//             {description}
-//         </div>
-//     </div>
-// }
-
-// // container part
-// function mapStateToProps(state) {
-//     return {...state};
-// }
-
-// function mapDispatchToProps(dispatch) {
-//     return bindActionCreators({
-//         ...UserListActions,
-//     }, dispatch);
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(UserList);

@@ -9,7 +9,7 @@ import rootReducer from './reducers/index';
 
 // create an object for the default data
 const defaultState = {
-      userList: [{fasdf:'fsdfsd'}]
+      userList: []
 };
 
 const enhancers = compose(
