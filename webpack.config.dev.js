@@ -5,7 +5,7 @@ module.exports = {
   devtool: 'source-map',
   entry: [
     'webpack-hot-middleware/client',
-    './client/entry'
+    './client/app/App'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -29,13 +29,13 @@ module.exports = {
         {
           test: /\.scss$/,
           include: path.join(__dirname, 'client'),
-          exclude: /node_modules/
+          exclude: /node_modules/,
           loader: 'style-loader!css-loader!sass-loader?sourceMap'
         },
         {
           test: /\.css$/,
           include: path.join(__dirname, 'client'),
-          exclude: /node_modules/
+          exclude: /node_modules/,
           loader: 'style-loader!css-loader?sourceMap'
         }
     ]
