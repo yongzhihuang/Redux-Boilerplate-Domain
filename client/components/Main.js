@@ -8,13 +8,13 @@ import NavBar from './NavBar';
 
 const Main = React.createClass({
 	render() {
-
-		return (
-			<div>
-				<NavBar />
-				{React.cloneElement(this.props.children, this.props)}
-			</div>
-		)
+        const { children, ...props } = this.props;
+        return (
+          <div>
+            <NavBar />
+            {React.cloneElement(children, props)}
+          </div>
+        )
 	}
 });
 
