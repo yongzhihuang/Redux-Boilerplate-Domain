@@ -12,9 +12,9 @@ const UserList = React.createClass({
     },
 
     render() {
-      let userList =(this.props.userList && (this.props.userList.length === 0 || this.props.userList.length === 1)) ?
+      let userList =(this.props.userList.status === 'loading') ?
         <img src="http://i.imgur.com/TRl8EIl.gif"/> :
-        this.props.userList.map((user, index) => {
+        this.props.userList.users.map((user, index) => {
             return <li key={index}user={user}>{user.name}</li>
         });
 
@@ -31,7 +31,6 @@ const UserList = React.createClass({
 
 // Mappers
 function mapStateToProps(state) {
-  console.log('state', state)
     return {
       ...state
     };

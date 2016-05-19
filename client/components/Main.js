@@ -12,12 +12,11 @@ const Main = React.createClass({
         return (
           <div>
             <NavBar />
-            {React.cloneElement(children, props)}
+              {React.cloneElement(children, props)}
           </div>
         )
 	}
 });
-
 
 function mapStateToProps(state) {
     return {...state};

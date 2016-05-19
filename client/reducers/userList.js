@@ -3,16 +3,14 @@
 
 function userList(state = [], action) {
     switch(action.type) {
-        case 'EMPTY_USER_LIST':
-          return [
-            []
-          ]
         case 'FETCH_USER_LIST':
-          const userList = action.payload.data;
-          return [
-            {name: Math.random()},
-            ...userList
-          ]
+          if (action.payload && action.payload.data) {
+            const userList = action.payload.data;
+            return {
+              status: action.status,
+              users: [ ...userList ]
+            }
+          }
         default:
             return state;
     }
