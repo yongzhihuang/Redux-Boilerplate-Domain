@@ -4,7 +4,7 @@ import {syncHistoryWithStore} from 'react-router-redux';
 import {browserHistory} from 'react-router';
 
 // import the root reducer
-import rootReducer from '../reducers/index';
+import rootReducer from './reducers/index';
 
 // create an object for the default data
 const defaultState = {
@@ -25,8 +25,8 @@ const store = createStore(
 export const history = syncHistoryWithStore(browserHistory, store);
 
 if(module.hot) {
-  module.hot.accept('../reducers/',() => {
-    const nextRootReducer = require('../reducers/index').default;
+  module.hot.accept('./reducers/',() => {
+    const nextRootReducer = require('./reducers/index').default;
     store.replaceReducer(nextRootReducer);
   });
 }

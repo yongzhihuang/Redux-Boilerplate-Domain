@@ -1,16 +1,7 @@
-// Import css
-import css from '../styles/main.scss';
-
-// Import Router
-// import router from 'router';
-
-import React from 'react';
-import { render } from 'react-dom';
-
 // Import Components
-import Main from '../components/Main';
-import AppWrapper from '../components/AppWrapper';
-import UserList from '../components/UserList/UserList';
+import Main from './components/Main';
+import AppWrapper from './components/AppWrapper';
+import UserList from './components/UserList/UserList';
 
 // import react router deps
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
@@ -28,4 +19,4 @@ const router = (
   </Provider>
 )
 
-render(router, document.getElementById('root'));
+export default router;
