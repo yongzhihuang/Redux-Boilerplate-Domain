@@ -13,13 +13,11 @@ const UserList = React.createClass({
     },
 
     render() {
-      // let userList =(this.props.users && (this.props.users.length === 0 || this.props.users.length === 1)) ?
-      //   <h1>Loading...</h1> :
-      //   this.props.users.map((user, index) => {
-      //       return <li key={index}user={user}>{user.name}</li>
-      //   });
-      let userList = <h1>HI</h1>
-      console.log(this.props);
+      let userList =(this.props.userList && (this.props.userList.length === 0 || this.props.userList.length === 1)) ?
+        <h1>Loading...</h1> :
+        this.props.userList.map((user, index) => {
+            return <li key={index}user={user}>{user.name}</li>
+        });
 
       return (
           <div className="app-wrapper">
@@ -34,8 +32,9 @@ const UserList = React.createClass({
 
 
 function mapStateToProps(state) {
+  console.log('state', state)
     return {
-      userList: state.usersList
+      ...state
     };
 }
 

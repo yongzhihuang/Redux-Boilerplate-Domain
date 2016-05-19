@@ -2,7 +2,7 @@
 // 1. the action (info about what happened)
 // 2. copy of current state
 
-function UserListReducer(state = [], action) {
+function userList(state = [], action) {
     switch(action.type) {
         case 'EMPTY_USER_LIST':
           return [
@@ -20,4 +20,4 @@ function UserListReducer(state = [], action) {
     }
 }
 
-export default UserListReducer;
+export default userList;
