@@ -1,0 +1,12 @@
+@import '../../node_modules/foundation/scss/normalize';
+@import '../../node_modules/foundation/scss/foundation';
+
+@import 'reset';
+@import 'typography.scss';
+@import 'vars';
+
+@import 'layouts/appWrapper';
+
+html, body {
+  background: $background;
+}

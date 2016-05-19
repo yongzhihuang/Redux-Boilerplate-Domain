@@ -1,0 +1,40 @@
+.app-wrapper{
+  @include grid-column(
+    $columns: 10,
+    $offset: 1
+  );
+
+  background: $background-light;
+  text-align: center;
+  padding: 25px;
+
+  h1, a {
+    font-size: 25px;
+    color: $white;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      color: $gray;
+    }
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      background: $green;
+      color: black;
+      font-size: 20px;
+      padding: 10px;
+      width: 50%;
+      margin: 5px auto;
+      border-radius: 15px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
