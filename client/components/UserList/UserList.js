@@ -12,7 +12,7 @@ const UserList = React.createClass({
     },
 
     render() {
-      let userList =(this.props.userList.status === 'loading') ?
+      let userList =(this.props.userList.status === 'loading' && !this.props.userList.users) ?
         <img src="http://i.imgur.com/TRl8EIl.gif"/> :
         this.props.userList.users.map((user, index) => {
             return <li key={index}user={user}>{user.name}</li>

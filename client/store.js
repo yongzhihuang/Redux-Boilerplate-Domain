@@ -8,7 +8,10 @@ import rootReducer from './reducers/index';
 
 // create an object for the default data
 const defaultState = {
-      userList: {}
+      userList: {
+        status: 'loading',
+        users: []
+      }
 };
 
 const enhancers = compose(
